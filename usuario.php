@@ -39,7 +39,7 @@ class Usuario
 //--CONSTRUCTOR
 	public function __construct($id=NULL)
 	{
-		if($idUsu != NULL){
+		if($id != NULL){
 			$obj = Usuario::TraerUnUsuario($idUsu);
 			
 			$this->idUsu = $obj->$idUsu;

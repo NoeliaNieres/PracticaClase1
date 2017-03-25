@@ -3,6 +3,7 @@ use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
 require '/vendor/autoload.php';
+require 'usuario.php';
 
 $app = new \Slim\App;
 $app->get('/hello/{name}', function (Request $request, Response $response) {
@@ -11,5 +12,13 @@ $app->get('/hello/{name}', function (Request $request, Response $response) {
 
     return $response;
 });
+
+$app->get('/usuarios[/]', function (Request $request, Response $response) {
+   $datos = Usuario :: TraerTodosLosUsuarios();
+   $response->write(json_encode($datos)); 
+    
+    return $response;
+});
+
 $app->run();
 
