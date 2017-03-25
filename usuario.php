@@ -40,9 +40,9 @@ class Usuario
 	public function __construct($id=NULL)
 	{
 		if($id != NULL){
-			$obj = Usuario::TraerUnUsuario($idUsu);
+			$obj = Usuario::TraerUnUsuario($id);
 			
-			$this->idUsu = $obj->$idUsu;
+			$this->id = $obj->$id;
 			$this->nombre = $obj->nombre;
 			$this->email = $obj->email;
 		}
